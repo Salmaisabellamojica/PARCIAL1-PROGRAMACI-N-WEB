@@ -36,7 +36,13 @@ function registrar() {
         return; 
     }
 
-
+    var ciudad = document.getElementById("ciudad").value
+    let ciudadRegex = /^[a-zA-Z\s]+$/;
+    
+    if (!ciudadRegex.test(ciudad)) {
+        alert("Ciudad no válida. Solo se permiten letras y espacios.");
+        return; 
+    }
 
     var telefono = document.getElementById("telefono").value
     let telefonoRegex = /^\d{10}$/;
@@ -46,6 +52,12 @@ function registrar() {
         return;// Detener la ejecución si el número de teléfono no es válido
     }
 
+    var correo = document.getElementById("correo").value
+    let correoRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!correoRegex.test(correo)) {
+        alert("Correo no válido. Debe tener el formato correcto.");
+        return; 
+    }
 
 
 
