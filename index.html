@@ -9,7 +9,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.cs" rel="stylesheet">
 
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
@@ -23,13 +23,15 @@
 
         <h1>Catálogo de Servicios Digitales</h1>
 
-        <button id="modoBtn" class="btn btn-dark">Modo oscuro</button>
+        <button id="modoBtn" class="btn btn-dark" onclick="modoOscuro()">Modo oscuro</button>
 
         <div class="row mt-4">
 
             <div class="col-md-4">
 
                 <div class="card">
+
+                    <img src="/assets/desarrollo_web.jpg" alt="desarrollo web" class="card-img-top">
 
                     <div class="card-body">
 
@@ -45,10 +47,15 @@
 
             </div>
 
+        <div class="modal" tabindex="-1">
+
+        </div>
 
             <div class="col-md-4">
 
                 <div class="card">
+
+                    <img src="/assets/marketing.jpg" alt="marketing digital" class="card-img-top">
 
                     <div class="card-body">
 
@@ -64,8 +71,126 @@
 
             </div>
 
+            <div class="col-md-4">
+
+                <div class="card">
+
+                    <img src="/assets/desarrollo_movil.png" alt="desarrollo móvil" class="card-img-top">
+
+                    <div class="card-body">
+
+                        <h5>Desarrollo Móvil</h5>
+
+                        <p>Aplicaciones móviles para iOS y Android</p>
+
+                        <button class="btn btn-primary" onclick="solicitarServicio()">Solicitar servicio</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="card">
+
+                    <img src="/assets/consultoria_tecnologica.webp" alt="consultoría tecnológica" class="card-img-top">
+
+                    <div class="card-body">
+
+                        <h5>Consultoría Tecnológica</h5>
+
+                        <p>Asesoramiento especializado en soluciones digitales</p>
+
+                        <button class="btn btn-primary" onclick="solicitarServicio()">Solicitar servicio</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="card">
+
+                    <img src="/assets/Hosting.webp" alt="marketing digital" class="card-img-top">
+
+                    <div class="card-body">
+
+                        <h5>Marketing Digital</h5>
+
+                        <p>Campañas de marketing online</p>
+
+                        <button class="btn btn-primary" onclick="solicitarServicio()">Solicitar servicio</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="card">
+
+                    <img src="/assets/SEO.png" alt="SEO" class="card-img-top">
+
+                    <div class="card-body">
+
+                        <h5>SEO</h5>
+
+                        <p>Optimización de sitios web para motores de búsqueda</p>
+
+                        <button class="btn btn-primary" onclick="solicitarServicio()">Solicitar servicio</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="card">
+
+                    <img src="/assets/diseñoUX_UI.jpg" alt="diseño UI" class="card-img-top">
+
+                    <div class="card-body">
+
+                        <h5>Diseño UX-UI</h5>
+
+                        <p>Diseño UX-UI</p>
+
+                        <button class="btn btn-primary" onclick="solicitarServicio()">Solicitar servicio</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
 
+
+
+
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" onclick="solicitarServicio()">
+                    <p> servicios solicitados:+ " + contador + "</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
 
         <h3 class="mt-5">Registro de Cliente</h3>
 
@@ -73,9 +198,27 @@
 
             <input type="text" id="nombre" placeholder="Nombre" class="form-control mb-2">
 
-            <input type="text" id="correo" placeholder="Correo" class="form-control mb-2">
+            <input type="text" id="apellidos" placeholder="Apellidos" class="form-control mb-2">
 
-            <input type="text" id="telefono" placeholder="Teléfono" class="form-control mb-2">
+            <input type="number" id="edad" placeholder="Edad" class="form-control mb-2">
+
+            <input type="text" id="ciudad" placeholder="Ciudad" class="form-control mb-2">
+
+            <input type="number" id="telefono" placeholder="Teléfono" class="form-control mb-2">
+
+            <input type="email" id="correo" placeholder="Correo" class="form-control mb-2">
+
+            <select class="form-control mb-2" id="servicio">
+                <option value="">Seleccione un servicio</option>
+                <option value="desarrollo-web">Desarrollo Web</option>
+                <option value="hosting">Hosting</option>
+                <option value="diseño-ux-ui">Diseño UX/UI</option>
+                <option value="marketing-digital">Marketing Digital</option>
+                <option value="seo">SEO</option>
+                <option value="desarrollo-movil">Desarrollo Móvil</option>
+                <option value="soporte-tecnico">Soporte Técnico</option>
+                <option value="consultoria-tecnologica">Consultoría Tecnológica</option>
+            </select>
 
             <button class="btn btn-success" onclick="registrar()">Registrar</button>
 
@@ -83,7 +226,10 @@
 
     </div>
 
-    <script src="script.js"></script>
+    Nombre, Apellidos, Edad,
+Ciudad, Teléfono, Correo electrónico, Tipo de servicio de interés (select),
+
+    <script src="/js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
 
