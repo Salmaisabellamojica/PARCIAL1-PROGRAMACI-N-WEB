@@ -57,21 +57,9 @@ function registrar() {
     if (!correoRegex.test(correo)) {
         alert("Correo no válido. Debe tener el formato correcto.");
         return; 
+    }else{
+        alert("Registro exitoso. Gracias por registrarte, " + nombre + " " + apellidos + "."+ edad + " años, de " + ciudad + ". Teléfono: " + telefono + ". Correo: " + correo + ".")
     }
-
-
-
-
-    let regex = /@/
-
-    if (nombre == "") {
-        alert("Nombre obligatorio")
-    }
-
-    if (regex.test = correo) {
-        alert("Correo válido")
-    }
-
 
 
 }
